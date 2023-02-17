@@ -1,0 +1,223 @@
+:root {
+  --color-secondary: #071f44;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Container list task */
+
+.container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 400px;
+  width: 80%;
+  margin: 80px auto;
+  padding: 24px 0;
+  box-shadow: 7px 4px 31px -5px rgba(0, 0, 0, 0.57);
+}
+
+/* Styling the aside */
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  border-right: 4px solid #e7e7e7;
+}
+
+.aside--title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  font-size: 32px;
+}
+
+.aside {
+  overflow: scroll;
+}
+
+.aside::-webkit-scrollbar {
+  width: 0;
+}
+
+.aside--title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  padding: 36px 12px;
+  background-color: #fff;
+}
+
+.AddButton {
+  border-radius: 4px;
+  background-color: var(--color-secondary);
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.aside--note > .note--item {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 12px;
+  font-size: 20px;
+  color: #000;
+}
+
+.note--item:hover {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.note--item svg {
+  font-size: 24px;
+}
+
+.note--item svg:hover {
+  cursor: pointer;
+}
+
+/* Styling the main content */
+
+main {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  padding: 18px;
+  gap: 16px;
+}
+
+.main--butons {
+  display: flex;
+  gap: 12px;
+}
+
+.main--butons button {
+  background-color: #e7e7e7;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+button:active {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+/* Styling edit container */
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.edit > div {
+  display: flex;
+  gap: 24px;
+  font-size: 18px;
+}
+
+.edit--content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit--text {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: 2px solid #e7e7e7;
+  background-color: transparent;
+  font-size: 18px;
+  padding: 12px;
+  resize: none;
+}
+
+.edit--content button {
+  width: max-content;
+  margin-top: 12px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .aside--note{
+    margin-top: 12px;
+  }
+
+  .aside--note > .note--item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 12px;
+    font-size: 20px;
+    color: #000;
+  }
+
+  .note--item:hover {
+    color: white;
+  }
+
+
+  .aside--title {
+    height: 0px;
+    padding: 10px;
+  }
+
+  .main--butons {
+    justify-content: center;
+  }
+
+  .main--butons button {
+    padding: 8px 15%;
+  }
+
+  .edit {
+    align-items: center;
+  }
+  .AddButton {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .aside--title {
+    position: relative;
+  }
+
+  .aside {
+    border-bottom: 2px solid #e7e7e7;
+  }
+
+  .aside--note {
+    height: 100px;
+    overflow-y: scroll;
+    margin-top: 16px;
+  }
+
+  .note--item {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    color: #000;
+  }
+
+  .main--butons {
+    justify-content: center;
+  }
+}
